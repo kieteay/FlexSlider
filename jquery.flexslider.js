@@ -1,5 +1,5 @@
 /*
- * jQuery FlexSlider v2.6.4
+ * jQuery FlexSlider v2.6.4-1
  * Copyright 2012 WooThemes
  * Contributing Author: Tyler Smith
  */
@@ -145,7 +145,7 @@
         if (touch && slider.vars.touch) { methods.touch(); }
 
         // FADE&&SMOOTHHEIGHT || SLIDE:
-        if (!fade || (fade && slider.vars.smoothHeight)) { $(window).bind("resize orientationchange focus", methods.resize()); }
+        if (!fade || (fade && slider.vars.smoothHeight)) { $(window).bind("resize orientationchange focus", function(){setTimeout(function(){methods.resize()},100)}); }
 
         slider.find("img").attr("draggable", "false");
 
